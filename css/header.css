@@ -1,0 +1,161 @@
+:root {
+  --header-height: 50px;
+  --header-bg-color: #292929;
+}
+#header-container {
+  box-sizing: content-box;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+
+  height: var(--header-height);
+  width: 100%;
+  padding: 0.5rem 0;
+
+  background: transparent;
+
+  transition: all 0.5s ease-in-out;
+}
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  max-width: 1920px;
+
+  padding: 0 1rem;
+  margin: 0 2rem;
+
+  color: #fff;
+}
+
+/* Logo */
+#header-logo {
+  display: flex;
+}
+#header-logo > img {
+  object-fit: contain;
+  height: 100%;
+  margin-right: 1rem;
+}
+#header-logo > span {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+/* Navbar */
+#header-navbar {
+  display: flex;
+}
+#header-navbar > a {
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  transition: color 0.3s ease;
+}
+#header-navbar > a:not(:last-child) {
+  margin-right: 15px;
+}
+#header-navbar > a:hover {
+  color: var(--complementary-color);
+}
+
+#navbar-indicator {
+  position: absolute;
+  z-index: 1;
+
+  height: 4px;
+
+  background-color: var(--complementary-color);
+  border-radius: 2px;
+
+  transition: left 0.25s ease, width 0.25s ease;
+}
+
+/* Navbar Dropdown Button */
+#header-navbar-btn {
+  display: none;
+  flex-direction: column;
+
+  color: #fff;
+  font-size: 32px;
+}
+#header-navbar-btn i:first-child {
+  display: block;
+}
+#header-navbar-btn i:last-child {
+  display: none;
+}
+
+.navbar-btn-toggle-icons i:first-child {
+  display: none !important;
+}
+.navbar-btn-toggle-icons i:last-child {
+  display: block !important;
+}
+
+/* Scrolled Header */
+.scrolled-header {
+  background-color: var(--header-bg-color) !important;
+}
+
+/* Media */
+@media only screen and (max-width: 768px) {
+  #header-container {
+    padding: 0;
+  }
+  #header {
+    margin: 0;
+    padding: 1rem;
+  }
+
+  #header-navbar-btn {
+    display: flex;
+  }
+
+  #header-navbar {
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    flex-direction: column;
+
+    padding: 2rem;
+
+    background: var(--header-bg-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    clip-path: circle(0);
+
+    transition: clip-path 0.5s ease;
+  }
+
+  #header-navbar > a {
+    margin-right: 0 !important;
+    font-size: 2rem;
+  }
+  #header-navbar > a:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .visible {
+    clip-path: circle(100%) !important;
+  }
+
+  @keyframes navbar-ani {
+    from {
+      clip-path: circle(0);
+    }
+    to {
+      clip-path: circle(100%);
+    }
+  }
+}
