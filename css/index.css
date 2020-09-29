@@ -92,6 +92,7 @@ section {
   margin-top: 2rem;
 }
 .intro-links > a {
+  display: inline-block;
   font-size: 2.5rem;
 
   transition: color 0.3s ease-in;
@@ -117,6 +118,11 @@ section {
 .intro-cta > a:not(:last-child),
 .intro-links > a:not(:last-child) {
   margin-right: 1.5rem;
+}
+.link-svg-icon {
+  margin-bottom: -3px;
+  width: 36px;
+  height: 36px;
 }
 
 .intro-illustration {
