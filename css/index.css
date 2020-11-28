@@ -353,7 +353,7 @@ section {
 
 .project-read-btn {
   position: absolute;
-  top: 48px;
+  top: 0;
   right: 0;
   z-index: 5;
 
@@ -374,15 +374,27 @@ section {
   transition: background-color 0.3s ease;
 }
 .project-read-btn-text {
-  width: 0;
   white-space: nowrap;
   overflow: hidden;
 
+  width: 87.08px;
+  margin-right: 0.5rem;
+
   transition: width 0.2s ease;
+}
+.project-content:hover .project-read-btn-text {
+  width: 0;
+  margin-right: 0;
 }
 .project-read-btn:hover .project-read-btn-text {
   width: 87.08px;
   margin-right: 0.5rem;
+}
+.project-read-btn i {
+  transition: transform 0.2s ease;
+}
+.project-read-btn:hover i {
+  transform: rotateZ(180deg);
 }
 
 .project-popup {
